@@ -1,0 +1,49 @@
+﻿@model List<ProjectTest.Models.Exam>
+
+@{
+    ViewData["Title"] = "Exams Index";
+}
+
+<h2>Exams Index</h2>
+
+<p>
+    <a asp-action="Create">Create New Exam</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].SubjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].StudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Mark)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mark)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-subjectId="@item.SubjectId" asp-route-studentId="@item.StudentId">Details</a> |
+                    <a asp-action="Edit" asp-route-subjectId="@item.SubjectId" asp-route-studentId="@item.StudentId">Edit</a> |
+                    <a asp-action="Delete" asp-route-subjectId="@item.SubjectId" asp-route-studentId="@item.StudentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

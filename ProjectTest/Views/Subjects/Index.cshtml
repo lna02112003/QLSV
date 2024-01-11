@@ -1,0 +1,35 @@
+﻿@model List<ProjectTest.Models.Subject>
+
+@{
+    ViewData["Title"] = "Subjects Index";
+}
+
+<h2>Subjects Index</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Subject</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Subject Id</th>
+            <th>Subject Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in Model)
+        {
+            <tr>
+                <td>@subject.SubjectId</td>
+                <td>@subject.SubjectName</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@subject.SubjectId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@subject.SubjectId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@subject.SubjectId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

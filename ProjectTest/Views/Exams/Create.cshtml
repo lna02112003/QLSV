@@ -1,0 +1,30 @@
+﻿@model ProjectTest.Models.Exam
+
+@{
+    ViewData["Title"] = "Create Exam";
+}
+
+<h2>Create Exam</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="SubjectId"></label>
+        <input asp-for="SubjectId" class="form-control" />
+        <span asp-validation-for="SubjectId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentId"></label>
+        <input asp-for="StudentId" class="form-control" />
+        <span asp-validation-for="StudentId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Mark"></label>
+        <input asp-for="Mark" class="form-control" />
+        <span asp-validation-for="Mark" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index">Back to List</a>
+</form>

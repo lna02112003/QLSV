@@ -1,0 +1,18 @@
+﻿@model ProjectTest.Models.Exam
+
+@{
+    ViewData["Title"] = "Exam Details";
+}
+
+<h2>Exam Details</h2>
+
+<div>
+    <h4>SubjectId: @Html.DisplayFor(model => model.SubjectId)</h4>
+    <h4>StudentId: @Html.DisplayFor(model => model.StudentId)</h4>
+    <h4>Mark: @Html.DisplayFor(model => model.Mark)</h4>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-subjectId="@Model.SubjectId" asp-route-studentId="@Model.StudentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

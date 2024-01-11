@@ -1,0 +1,39 @@
+﻿@model ProjectTest.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>Student Details</h2>
+
+<div>
+    <h4>Student:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentRollId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentRollId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentDOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentDOB.ToString("yyyy-MM-dd"))
+        </dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.StudentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

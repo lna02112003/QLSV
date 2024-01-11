@@ -1,0 +1,19 @@
+﻿@model ProjectTest.Models.Subject
+
+@{
+    ViewData["Title"] = "Create Subject";
+}
+
+<h2>Create Subject</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="SubjectName"></label>
+        <input asp-for="SubjectName" class="form-control" />
+        <span asp-validation-for="SubjectName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>
